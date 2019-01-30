@@ -17,6 +17,14 @@ router-outlet ~ * {
   width: 100%;
 }
 
+mat-tab-group{
+  max-width: 80%;
+  margin: 2em auto;
+}
+
+.mat-tab-body-wrapper{
+  padding:10px;
+}
 .fill {
   flex: 1 1 auto;
 }
