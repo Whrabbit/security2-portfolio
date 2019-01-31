@@ -5,10 +5,11 @@ import { MatToolbarModule } from "@angular/material";
 import { MatTabsModule } from '@angular/material';
 import { AppComponent } from "./app.component";
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { NgxGalleryModule } from 'ngx-gallery';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, MatToolbarModule, MatTabsModule, FlexLayoutModule],
+  imports: [BrowserModule, BrowserAnimationsModule, MatToolbarModule, MatTabsModule, FlexLayoutModule, NgxGalleryModule],
   providers: [],
   bootstrap: [AppComponent]
 })

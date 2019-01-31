@@ -1,5 +1,6 @@
 @import "variables";
 @import "mixins";
+@import "~font-awesome/css/font-awesome.css";
 
 html,
 body {
@@ -22,7 +23,7 @@ mat-tab-group{
   margin: 2em auto;
 }
 
-.mat-tab-body-wrapper{
+.mat-tab-body{
   padding:10px;
 }
 .fill {

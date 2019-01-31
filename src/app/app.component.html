@@ -1,25 +1,12 @@
-<div flex>
-    <mat-toolbar color="primary">
-      <span>Security 2 - Portfolio</span> <span class="fill"></span>
-      <span>Mika Krooswijk & Whitney Cheung</span>
-    </mat-toolbar>
-    <mat-tab-group>
-      <mat-tab label="WhatsApp Diagram">
-        <div fxLayout="row" fxLayoutGap="20px">
-          <div flex><img src="assets/img/context_diagram.png"></div>
-          <div flex>Context Diagram</div>
-        </div>
-        <div fxLayout="row" fxLayoutGap="20px">
-          <div flex><img src="assets/img/dfd.png"></div>
-          <div flex>DFD Diagram</div>
-        </div>
-        <div fxLayout="row" fxLayoutGap="20px">
-          <div flex><img src="assets/img/deployment_diagram.png"></div>
-          <div flex>Deployment Diagram</div>
-        </div>
-      </mat-tab>
-      <mat-tab label="Second"> Content 2 </mat-tab>
-      <mat-tab label="Third"> Content 3 </mat-tab>
-    </mat-tab-group>
-</div>
+<mat-toolbar color="primary">
+  <span>Security 2 | Portfolio</span> <span class="fill"></span>
+  <span>Mika Krooswijk & Whitney Cheung</span>
+</mat-toolbar>
+<mat-tab-group>
+  <mat-tab label="WhatsApp Diagram">
+    <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+  </mat-tab>
+  <mat-tab label="Second"> Content 2 </mat-tab>
+  <mat-tab label="Third"> Content 3 </mat-tab>
+</mat-tab-group>
 
