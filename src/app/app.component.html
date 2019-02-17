@@ -2,11 +2,191 @@
   <span>Security 2 | Portfolio</span> <span class="fill"></span>
   <span>Mika Krooswijk & Whitney Cheung</span>
 </mat-toolbar>
-<mat-tab-group>
-  <mat-tab label="WhatsApp Diagram">
-    <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
-  </mat-tab>
-  <mat-tab label="Second"> Content 2 </mat-tab>
-  <mat-tab label="Third"> Content 3 </mat-tab>
-</mat-tab-group>
+<div class="container">
+  <div layout="column">
+    <h2>Whats App Diagram</h2>
+    <ngx-gallery [options]="galleryOptions" [images]="whatsappImages"></ngx-gallery>
+
+    <div flex> <p>Leuke tekst bij deze diagrammen</p></div>
+  </div>
+  <div layout="column">
+    <h2>STRIDE</h2>
+    <h3>Spoofing</h3>
+    <div flex>
+      <p>
+        &ldquo;Human User may be spoofed by an attacker and this may lead to unauthorized access to Bericht verzenden (front end).
+        Consider using a standard authentication mechanism to identify the external entity.&rdquo;
+      </p>
+      <p>Om dit probleem te verhelpen kan een digitale handtekening gebruikt worden. Hierdoor kan de server verifiëren dat het bericht authentic is.</p>
+    </div>
+
+    <h3>Tampering</h3>
+    <div flex>
+      <p>
+        Er is geen tampering thread in ons model gevonden door TMT.
+        Tampering zou kunnen voorkomen als het verzenden van berichten niet over een geëncrypt kanaal gaat, bijvoorbeeld HTTP.
+        Iemand die het bericht onderschept kan het bericht dan inzien en ook aanpassen.
+      </p>
+      <p>
+        Dit kan voorkomen worden door een checksum mee te sturen met het bericht.
+        Deze checksum kan dan met de private key geëncrypt worden om ervoor te zorgen dat ook niemand deze checksum kan aanpassen.
+      </p>
+    </div>
+
+    <h3>Repudiation</h3>
+    <div flex>
+      <p>
+        &ldquo;Bericht verzenden (back end) claims that it did not receive data from a source outside the trust boundary.
+        Consider using logging or auditing to record the source, time, and summary of the received data.&rdquo;
+      </p>
+      <p>
+        Er kan logging gebruikt worden op de backend server om bij te houden welke data er van wie ontvangen is.
+        Om te weten van wie het komt kunnen digitale handtekeningen wederom gebruikt worden.
+      </p>
+    </div>
+
+    <h3>Information Disclosure</h3>
+    <div flex>
+      <p>
+        Met information disclosure worden de data beschermd met end-to-end encryptie op de servers.
+        End-to-end encryptie betekent dat berichten zijn encrypted,
+        hiermee kunnen WhatsApp en derde partijen de berichten niet lezen.
+        Whatsapp slaat de berichten niet op wanneer de berichten verzonden zijn en ook niet in logs.
+        Onverzonden berichten worden na 30 dagen verwijderd van de server.
+        In de privacy policy wordt aangegeven dat WhatsApp gebruikersinformatie mag verzamelen, gebruiken, bewaren en delen.
+      </p>
+    </div>
+
+    <h3>Denial of Service</h3>
+    <div flex>
+      <p>
+        Whatsapp is wederom bekend dat het vatbaar is voor DDOS aanvallen.
+        Er zijn veel scripts op het internet beschikbaar om een DDOS aanval te doen.
+      </p>
+      <p>
+        Whatsapp heeft een delay op verstuurde berichten, deze berichten worden niet in een keer verstuurd via de server.
+        Dit zorgt ervoor dat er geen DDOS aanval gebeurd.
+      </p>
+      <p>
+        Een ander oplossing zou zijn dat de gebruiker een maximaal aantal berichten mag versturen achter elkaar,
+      zoals 10 berichten achter elkaar en niet meer of er moet dan na 10 berichten een 2 seconde delay hebben en dan mag de gebruiker weer een bericht sturen.
+      </p>
+    </div>
+
+    <h3>Elevation of Privilege</h3>
+    <div flex>
+      <p>
+        Om te voorkomen dat een hacker zich voordoet als een ander,
+        wordt bij het registreren eerst gevraagd naar het nummer van de gebruiker.
+        Daarna wordt er een sms gestuurd naar het nummer als extra beveiliging.
+      </p>
+      <p>
+        Er was in 2018 een security flaw in whatsapp. Hackers konden berichten,
+        die onderweg was om verstuurd te worden naar het ander partij, onderscheppen en veranderen.
+        Bij het ontsleutelen van de berichten kwamen de hackers erachter dat de protocollen die door WhatsApp werden gebruikt,
+        geconverteerd kon worden en gebruikt, zodat ze precies konden zien welke regels werden gebruikt in het protocol en ook om ze naar wens aan te passen.
+        Hiermee kunnen hackers de tekst van het antwoord van iemand anders op een groepschat wijzigen of de 'quote'-functie in een groepsgesprek gebruiken om de identiteit van de afzender te wijzigen.
+      </p>
+    </div>
+
+    <h2>Pen Testing van Tweeter</h2>
+    <p>
+      Om een simple forum appplicatie te maken hebben wij gekozen voor Node.js.
+      In de Node.js applicatie hebben we gekozen om Express te gebruiken om een HTTP server op te zetten.
+      Ook hebben we in deze applicatie gebruik gemaakt van jsonwebtoken(jwt) om ervoor te zorgen dat een gebruiker niet voor iedere request in moet loggen.
+    </p>
+    <p>
+      De app bestaat uit 3 pagina’s:
+      Een pagina voor het inloggen, een pagina voor het zien van bestaand posts en een voor het maken van nieuwe post.
+      In de server bestaan 3 routes voor het ophalen van deze pagina’s.
+      Ook zijn er op de server routes voor het inloggen, ophalen van post en het maken van posts.
+    </p>
+
+    <p>
+      Vervolgens hebben we gekeken naar welke thread ons systeem heeft,
+      en op welke assets deze threads van toepassing zijn.
+      Om de threads te bepalen hebben we gebruik gemaakt van de Thread modeling tool van Microsoft.
+    </p>
+
+    <h4>Assets:</h4>
+    <ul>
+      <li>Berichten</li>
+      <li>Gebruikers gegevens</li>
+    </ul>
+
+    <ngx-gallery [options]="galleryOptions" [images]="tweeterImage"></ngx-gallery>
+
+    <p>
+      Om de website te testen op Cross site scripting hebben we op een aantal plekken op de website geprobeerd een script te laden.
+      Dit script was <code><img src='' onerror='alert('xss')' /img”</code>.
+      Omdat de afbeelding nooit geladen kan worden, wordt de onerror altijd uitgevoerd als de website dit niet blokkeert.
+    </p>
+    <p>
+      We hebben geprobeerd deze tekst in te vullen in een URL parameter en in een posts op de website.
+      In beiden gevallen werd het script uitgevoerd door de browser.
+    </p>
+
+    <p>
+      Om dit probleem te voorkomen is er naar een mitigatie gezocht.
+      In de website werd de tekst die de gebruiker invult in de URL parameter of in een invoer veld ingeladen als HTML
+      door de methode <code>element.innerHTML</code> te gebruiken. Dit zorgt ervoor dat de tekst als HTML geladen wordt.
+    </p>
+
+    <p>
+      Naast innerHTML bestaat er ook innerText.
+      Deze methode laadt de tekst niet als HTML maar alleen als tekst,
+      waardoor het niet door de browser wordt uitgevoerd. Cross Site Scripting is hiermee voorkomen.
+    </p>
+
+    <p>
+      Om de website nog verder te controleren is er een code review gedaan aan de hand van OWASP code review checklist.
+      Hieronder zijn de punten te zien die nog niet goed zijn volgens de checklist, en wat daar nog aan gedaan kan worden:
+    </p>
+
+    <table style="width:100%">
+      <tr>
+        <th>Punt</th>
+        <th>Oplossing</th>
+      </tr>
+      <tr>
+        <td>Are all the untrusted inputs validated?
+          Input data is constrained and validated for type, length, format, and range.
+        </td>
+        <td>De user input moet op de server gevalideerd worden alvorens deze wordt opgeslagen.</td>
+      </tr>
+      <tr>
+        <td>Is the data sent on encrypted channel? Does the application use HTTPClient for making external
+          connections?
+        </td>
+        <td>Er moet een https verrbinding gemaakt worden met de client in plaats van een http verbinding.  </td>
+      </tr>
+      <tr>
+        <td>Is all PI and sensitive information being sent over the network encrypted form.</td>
+        <td>Http wordt gebruikt en informatie is dus niet geëncypt. </td>
+      </tr>
+      <tr>
+        <td>Is Password Complexity Check enforced on the password?</td>
+        <td>Wachtwoorden moeten worden gecontroleerd wanneer de gebruiker zichzelf registreerd.</td>
+      </tr>
+      <tr>
+        <td>Do audit logs log connection attempts (both successful and failures)?</td>
+        <td>Er moeten log bestanden komen van alle acties die op de server worden uitgevoerd</td>
+      </tr>
+      <tr>
+        <td>Does application design call for server authentication</td>
+        <td>Met https kan de server zijn identiteit bewijzen aan de client</td>
+      </tr>
+      <tr>
+        <td>Keys are not held in code.</td>
+        <td>Keys moeten worden opgeslagen in environment variabele</td>
+      </tr>
+      <tr>
+        <td>Does application support password expiration?</td>
+        <td>Wachtwoorden moeten naar een bepaalde tijd verlopen.</td>
+      </tr>
+    </table>
+
+  </div>
+</div>
+
 

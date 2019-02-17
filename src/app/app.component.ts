@@ -7,9 +7,9 @@ import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gal
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  title = 'security2-portfolio';
   galleryOptions: NgxGalleryOptions[];
-  galleryImages: NgxGalleryImage[];
+  whatsappImages: NgxGalleryImage[];
+  tweeterImage: NgxGalleryImage[];
 
   ngOnInit(): void {
 
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit{
       },
     ];
 
-    this.galleryImages = [
+    this.whatsappImages = [
       {
         small: 'assets/img/context_diagram.png',
         medium: 'assets/img/context_diagram.png',
@@ -50,6 +50,16 @@ export class AppComponent implements OnInit{
         description: "Deployment diagram"
       }
     ];
+
+    this.tweeterImage = [
+      {
+        small: 'assets/img/tmt.png',
+        medium: 'assets/img/tmt.png',
+        big: 'assets/img/tmt.png',
+        description: "De TMT geeft aan dat er bij al het contact met het backend proces risico is op Cross Site Scripting. "
+      },
+    ];
+
   }
 
 }

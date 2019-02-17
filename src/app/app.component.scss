@@ -4,3 +4,11 @@
 .mat-sidenav-container, .mat-sidenav-content, .mat-tab-body-content {
   transform: none !important;
 }
+.container{
+  width:1000px;
+  margin: 0px auto;
+  padding-bottom: 20px;
+}
+table, th, td {
+  border: 1px solid black;
+}
