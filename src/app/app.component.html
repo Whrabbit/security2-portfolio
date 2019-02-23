@@ -7,36 +7,51 @@
     <h2>Whats App Diagram</h2>
     <ngx-gallery [options]="galleryOptions" [images]="whatsappImages"></ngx-gallery>
 
-    <div flex> <p>Leuke tekst bij deze diagrammen</p></div>
+    <div flex>
+      <h3>Context diagram</h3>
+      <p>Dit diagram geeft een globaal overzicht van het proces. Processen en entiteiten zijn hier op hoog niveau
+        weergegeven.</p>
+      <h3>Level 1 diagram</h3>
+      <p>Het DFD level 1 diagram geeft hetzelfde procces weer, maar dan met hogere maten van detail.
+        Grote processen uit het context diagram zijn hier opgedeeld in kleinere sub processen </p>
+      <h3>Deployment diagram</h3>
+      <p>Dit diagram geeft de fysieke apparaten weer die in bij het gebruiken van whatsapp een rol spelen. Ook het
+        soort communicatie tussen deze apparaten is weergegeven </p>
+    </div>
   </div>
   <div layout="column">
     <h2>STRIDE</h2>
     <h3>Spoofing</h3>
     <div flex>
       <p>
-        &ldquo;Human User may be spoofed by an attacker and this may lead to unauthorized access to Bericht verzenden (front end).
+        &ldquo;Human User may be spoofed by an attacker and this may lead to unauthorized access to Bericht verzenden
+        (front end).
         Consider using a standard authentication mechanism to identify the external entity.&rdquo;
       </p>
-      <p>Om dit probleem te verhelpen kan een digitale handtekening gebruikt worden. Hierdoor kan de server verifiëren dat het bericht authentic is.</p>
+      <p>Om dit probleem te verhelpen kan een digitale handtekening gebruikt worden. Hierdoor kan de server verifiëren
+        dat het bericht authentic is.</p>
     </div>
 
     <h3>Tampering</h3>
     <div flex>
       <p>
         Er is geen tampering thread in ons model gevonden door TMT.
-        Tampering zou kunnen voorkomen als het verzenden van berichten niet over een geëncrypt kanaal gaat, bijvoorbeeld HTTP.
+        Tampering zou kunnen voorkomen als het verzenden van berichten niet over een geëncrypt kanaal gaat,
+        bijvoorbeeld HTTP.
         Iemand die het bericht onderschept kan het bericht dan inzien en ook aanpassen.
       </p>
       <p>
         Dit kan voorkomen worden door een checksum mee te sturen met het bericht.
-        Deze checksum kan dan met de private key geëncrypt worden om ervoor te zorgen dat ook niemand deze checksum kan aanpassen.
+        Deze checksum kan dan met de private key geëncrypt worden om ervoor te zorgen dat ook niemand deze checksum kan
+        aanpassen.
       </p>
     </div>
 
     <h3>Repudiation</h3>
     <div flex>
       <p>
-        &ldquo;Bericht verzenden (back end) claims that it did not receive data from a source outside the trust boundary.
+        &ldquo;Bericht verzenden (back end) claims that it did not receive data from a source outside the trust
+        boundary.
         Consider using logging or auditing to record the source, time, and summary of the received data.&rdquo;
       </p>
       <p>
@@ -53,7 +68,8 @@
         hiermee kunnen WhatsApp en derde partijen de berichten niet lezen.
         Whatsapp slaat de berichten niet op wanneer de berichten verzonden zijn en ook niet in logs.
         Onverzonden berichten worden na 30 dagen verwijderd van de server.
-        In de privacy policy wordt aangegeven dat WhatsApp gebruikersinformatie mag verzamelen, gebruiken, bewaren en delen.
+        In de privacy policy wordt aangegeven dat WhatsApp gebruikersinformatie mag verzamelen, gebruiken, bewaren en
+        delen.
       </p>
     </div>
 
@@ -64,12 +80,14 @@
         Er zijn veel scripts op het internet beschikbaar om een DDOS aanval te doen.
       </p>
       <p>
-        Whatsapp heeft een delay op verstuurde berichten, deze berichten worden niet in een keer verstuurd via de server.
+        Whatsapp heeft een delay op verstuurde berichten, deze berichten worden niet in een keer verstuurd via de
+        server.
         Dit zorgt ervoor dat er geen DDOS aanval gebeurd.
       </p>
       <p>
         Een ander oplossing zou zijn dat de gebruiker een maximaal aantal berichten mag versturen achter elkaar,
-      zoals 10 berichten achter elkaar en niet meer of er moet dan na 10 berichten een 2 seconde delay hebben en dan mag de gebruiker weer een bericht sturen.
+        zoals 10 berichten achter elkaar en niet meer of er moet dan na 10 berichten een 2 seconde delay hebben en dan
+        mag de gebruiker weer een bericht sturen.
       </p>
     </div>
 
@@ -83,9 +101,12 @@
       <p>
         Er was in 2018 een security flaw in whatsapp. Hackers konden berichten,
         die onderweg was om verstuurd te worden naar het ander partij, onderscheppen en veranderen.
-        Bij het ontsleutelen van de berichten kwamen de hackers erachter dat de protocollen die door WhatsApp werden gebruikt,
-        geconverteerd kon worden en gebruikt, zodat ze precies konden zien welke regels werden gebruikt in het protocol en ook om ze naar wens aan te passen.
-        Hiermee kunnen hackers de tekst van het antwoord van iemand anders op een groepschat wijzigen of de 'quote'-functie in een groepsgesprek gebruiken om de identiteit van de afzender te wijzigen.
+        Bij het ontsleutelen van de berichten kwamen de hackers erachter dat de protocollen die door WhatsApp werden
+        gebruikt,
+        geconverteerd kon worden en gebruikt, zodat ze precies konden zien welke regels werden gebruikt in het protocol
+        en ook om ze naar wens aan te passen.
+        Hiermee kunnen hackers de tekst van het antwoord van iemand anders op een groepschat wijzigen of de
+        'quote'-functie in een groepsgesprek gebruiken om de identiteit van de afzender te wijzigen.
       </p>
     </div>
 
@@ -93,7 +114,8 @@
     <p>
       Om een simple forum appplicatie te maken hebben wij gekozen voor Node.js.
       In de Node.js applicatie hebben we gekozen om Express te gebruiken om een HTTP server op te zetten.
-      Ook hebben we in deze applicatie gebruik gemaakt van jsonwebtoken(jwt) om ervoor te zorgen dat een gebruiker niet voor iedere request in moet loggen.
+      Ook hebben we in deze applicatie gebruik gemaakt van jsonwebtoken(jwt) om ervoor te zorgen dat een gebruiker niet
+      voor iedere request in moet loggen.
     </p>
     <p>
       De app bestaat uit 3 pagina’s:
@@ -117,9 +139,11 @@
     <ngx-gallery [options]="galleryOptions" [images]="tweeterImage"></ngx-gallery>
 
     <p>
-      Om de website te testen op Cross site scripting hebben we op een aantal plekken op de website geprobeerd een script te laden.
+      Om de website te testen op Cross site scripting hebben we op een aantal plekken op de website geprobeerd een
+      script te laden.
       Dit script was <code><img src='' onerror='alert('xss')' /img”</code>.
-      Omdat de afbeelding nooit geladen kan worden, wordt de onerror altijd uitgevoerd als de website dit niet blokkeert.
+      Omdat de afbeelding nooit geladen kan worden, wordt de onerror altijd uitgevoerd als de website dit niet
+      blokkeert.
     </p>
     <p>
       We hebben geprobeerd deze tekst in te vullen in een URL parameter en in een posts op de website.
@@ -129,7 +153,8 @@
     <p>
       Om dit probleem te voorkomen is er naar een mitigatie gezocht.
       In de website werd de tekst die de gebruiker invult in de URL parameter of in een invoer veld ingeladen als HTML
-      door de methode <code>element.innerHTML</code> te gebruiken. Dit zorgt ervoor dat de tekst als HTML geladen wordt.
+      door de methode <code>element.innerHTML</code> te gebruiken. Dit zorgt ervoor dat de tekst als HTML geladen
+      wordt.
     </p>
 
     <p>
@@ -140,7 +165,8 @@
 
     <p>
       Om de website nog verder te controleren is er een code review gedaan aan de hand van OWASP code review checklist.
-      Hieronder zijn de punten te zien die nog niet goed zijn volgens de checklist, en wat daar nog aan gedaan kan worden:
+      Hieronder zijn de punten te zien die nog niet goed zijn volgens de checklist, en wat daar nog aan gedaan kan
+      worden:
     </p>
 
     <table style="width:100%">
@@ -158,7 +184,7 @@
         <td>Is the data sent on encrypted channel? Does the application use HTTPClient for making external
           connections?
         </td>
-        <td>Er moet een https verrbinding gemaakt worden met de client in plaats van een http verbinding.  </td>
+        <td>Er moet een https verrbinding gemaakt worden met de client in plaats van een http verbinding. </td>
       </tr>
       <tr>
         <td>Is all PI and sensitive information being sent over the network encrypted form.</td>
@@ -190,14 +216,52 @@
   <h2>ScroogeCoin</h2>
   <ngx-gallery [options]="galleryOptions" [images]="scroogeCoin"></ngx-gallery>
 
+  <p>ScroogeCoin is een soort crypto currency. De logica voor deze currency is nog niet volledig geïmplementeerd. Deze
+    opdracht was om de transaction handler klasse compleet te maken. Deze klasse bestaat uit twee methoden,
+    verifyTansaction en handleTransaction. De verify methode verifiëert dat een transactie geldig is. Als dit zo is
+    handelt de handleTransaction methode de transactie af. </p>
+
   <p>
     UTXO staat voor ‘Unspent Transaction Output’. Het kan gebruikt worden als een Input voor een nieuwe transactie.
     Een gebruiker krijgt een Output binnen als transactie,
-    zodra een gebruiker het ‘coin’ wilt overmaken naar een ander gebruiker dan veranderd de output naar een input en wordt er een nieuw transactie aangemaakt.
-    UTXO komen in verschillende waardes, niet net als de Euro, Euro ‘s komen in waarden van 5, 10, 20, 50, 100, 200 en 500.
+    zodra een gebruiker het ‘coin’ wilt overmaken naar een ander gebruiker dan veranderd de output naar een input en
+    wordt er een nieuw transactie aangemaakt.
+    UTXO komen in verschillende waardes, niet net als de Euro, Euro ‘s komen in waarden van 5, 10, 20, 50, 100, 200 en
+    500.
   </p>
+
+  <h3>Verfify Transaction</h3>
+  <p>Voordat een transactie geldig is moeten er 5 controlles worden uitgevoerd. Deze worden gedaan door de
+    verifyTansaction methode. De 5 controlles zijn hieronder toegelicht</p>
+
+  <h4>All outputs claimed by tx are in the current UTXO pool</h4>
+  <p>Een transactie is alleen geldig als alle outputs die door de transactie geclaimd worden ook bestaan. Als ze
+    bestaan, staan ze in de huidige UXTOpool. Hierop wordt gecontroleerd</p>
+
+  <h4>The signatures on each input of tx are valid</h4>
+  <p>Alle inputs van een transactie bevatten een signature. Deze signature is een hash van de van de vorige transactie
+    en de UTXO die bij de input hoort. Deze signature moet worden gecontroleerd om er zeker van te zijn dat dit een
+    geldige input is.</p>
+
+  <h4>No UTXO is claimed multiple times by tx</h4>
+  <p>Bij een double spending attack probeert iemand een munt twee keer over te maken. Dit is niet
+    toegestaan. Hierom wordt er gecontroleerd of een munt niet twee keer door de transactie geclaimd wordt. Als dit wel
+    zo is, is de transactie niet geldig</p>
+
+  <h4>All of tx’s output values are non-negative</h4>
+  <p>Een output van een transactie kan alleen een positieve waarde hebben. Hierop moet dus worden
+    gecontroleerd. Als een transactie output een negative waarde bevat is deze niet geldig</p>
+
+  <h4>The sum of tx’s input values is greater than or equal to the sum of
+    its output values</h4>
+  <p>Omdat er een tranaction fee moet worden betaald is het mogelijk dat een transactie een hoger aantal input heeft
+    dan output. Het verschil is dan de tranaction fee. Het is echte niet mogelijk dat een transactie meer output heeft
+    dan inputs. Dan zou er ongerechtvaardigd geld gemaakt worden. Als er wel meer outputs dan inputs zijn is de
+    transactie niet geldig.</p>
+
+
+
+  <p></p>
 
   <h2></h2>
 </div>
-
-
