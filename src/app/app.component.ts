@@ -10,6 +10,7 @@ export class AppComponent implements OnInit{
   galleryOptions: NgxGalleryOptions[];
   whatsappImages: NgxGalleryImage[];
   tweeterImage: NgxGalleryImage[];
+  scroogeCoin: NgxGalleryImage[];
 
   ngOnInit(): void {
 
@@ -60,6 +61,20 @@ export class AppComponent implements OnInit{
       },
     ];
 
+    this.scroogeCoin = [
+      {
+        small: 'assets/img/scroogecoin.png',
+        medium: 'assets/img/scroogecoin.png',
+        big: 'assets/img/scroogecoin.png',
+        description: "ScroogeCoin UML diagram "
+      },
+      {
+        small: 'assets/img/alice.png',
+        medium: 'assets/img/alice.png',
+        big: 'assets/img/alice.png',
+        description: "Alice to Bob transaction"
+      },
+    ];
   }
 
 }
