@@ -4,7 +4,7 @@
 </mat-toolbar>
 <div class="container">
   <div layout="column">
-    <h2>Whats App Diagram</h2>
+    <h2>Opdracht 1: Whats App Diagram</h2>
     <ngx-gallery [options]="galleryOptions" [images]="whatsappImages"></ngx-gallery>
 
     <div flex>
@@ -20,7 +20,11 @@
     </div>
   </div>
   <div layout="column">
-    <h2>STRIDE</h2>
+    <hr>
+    <h2>Opdacht 2: STRIDE</h2>
+    <p>STRIDE is een model ontwikkeld door Microsoft voor het indentificeren van security threats. Hieronder is voor de
+      zes threats van STRIDE een security probleem gevonden in de WhatsApp diagram, bij deze threats staat een
+      mogelijke mitigatie beschreven. </p>
     <h3>Spoofing</h3>
     <div flex>
       <p>
@@ -109,7 +113,7 @@
         'quote'-functie in een groepsgesprek gebruiken om de identiteit van de afzender te wijzigen.
       </p>
     </div>
-
+    <hr>
     <h2>Pen Testing van Tweeter</h2>
     <p>
       Om een simple forum appplicatie te maken hebben wij gekozen voor Node.js.
@@ -212,7 +216,7 @@
       </tr>
     </table>
   </div>
-
+  <hr>
   <h2>ScroogeCoin</h2>
   <ngx-gallery [options]="galleryOptions" [images]="scroogeCoin"></ngx-gallery>
 
@@ -259,9 +263,11 @@
     dan inputs. Dan zou er ongerechtvaardigd geld gemaakt worden. Als er wel meer outputs dan inputs zijn is de
     transactie niet geldig.</p>
 
-
-
-  <p></p>
+  <h3>Handle transaction</h3>
+  <p>Een transactie moet ook afgehandeld worden. Dit gebeurd in de handleTransaction methode. Wat deze methode concreet
+    doet is het verwijderen van uitgegeven UTXO's uit de pool en het toevoegen van de nieuwe outputs van de transactie
+    aan de UTXO pool. Dit alles gebeurt alleen als de transactie geldig is bevonden door de verifyTansaction methode.</p>
+  <hr>
 
   <h2></h2>
 </div>
